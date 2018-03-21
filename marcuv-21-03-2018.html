@@ -1,0 +1,49 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p id="demo3"> Display the result here.</p>
+<script>
+// Scope: global, local
+// 2 global variables, type string (option type: numeric (integer, float), boolean)
+// Select: Document > #demo > Result
+var output = document.getElementById("demo3");
+// Nu er string Display the result here gemt i output
+var str1 = "Hello";
+var str2 = "World!";
+	
+var x = 5;
+var y = 10;
+
+var result = str1 + " " + str2; // Concatenation
+//var result1 = x * y;
+	
+// Paranteser i en funktion bruges til mulige "argumenter"
+function multiply(){
+	// Do something...
+	// En lokal variabel
+	var result1 = x * y;
+	// Funktionen giver en værdi tilbage
+	
+	console.log(result1);
+	return result1;
+}
+	
+//function call
+console.log(multiply());
+// console.log(result);
+
+
+//output.innerHTML = result + " Calculation result is: " + result1;
+output.innerHTML = result;
+// += tilføjer (kæder) værdierne
+output.innerHTML += " Calculation result is: ";
+output.innerHTML += multiply();
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>JS Basics</title>
 </head>
 
 <body>
@@ -22,12 +22,20 @@ document.getElementById("demo2").innerHTML = "We are \"Vikings\"."
 </script>
 	
 <h3>Øvelse 4</h3>
-<p id="demo3">Display the result here.</p>
+<p id="demo3"> Display the result here.</p>
 <script>
-var str1 = "Hello ";
+// Scope: global, local
+// 2 global variables, type string (option type: numeric (integer, float), boolean)
+// Select: Document > #demo > Result
+var output = document.getElementById("demo3");
+// Nu er string Display the result here gemt i output
+var str1 = "Hello";
 var str2 = "World!";
-document.getElementById("demo3").innerHTML = str1 + str2;
+
+var result = str1 + " " + str2; // Concatenation
+document.getElementById("demo3").innerHTML = result;
 </script>
+	
 	
 <h2>Øvelser - Variabler </h2>
 <h3>Øvelse 1+2+3</h3>
