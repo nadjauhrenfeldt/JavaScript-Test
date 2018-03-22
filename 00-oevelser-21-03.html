@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS basics</title>
+</head>
+
+<body>
+<!-- et HTML element som bruges til JS output -->
+<p id="demo"></p>
+<script>
+		
+		// vælger dokumentet (siden) > #demo
+		var output = document.getElementById('demo');
+		console.log(output); // tjek hvad der ligger i variablen output
+		
+		// 2 globale variabler (synlig for hele script!), type string. Andre optioner for variabler er: number (integer eller float), boolean (true eller false).
+		var str1 = 'Hello'; 
+		var str2 = 'World';
+		
+		var result = str1 + ' ' + str2 + '!'; // "concatenation" af de 2 strings
+		
+		// overfører indholdet af variablen result til vores output element
+		output.innerHTML = result;
+		
+		// JS prompt() metode: Brugeren kan taste 2 tal
+		// Tallene bliver lagret i de 2 globale variabler x og y
+		var x = prompt('Indtast et nummer:', '');
+		var y = prompt('Indtast et nummer:', '');
+		
+		// en funktion som multiplicerer * tallene, som bliver tastet ind (x og y)
+		function multiply(){
+			// Tjek om x og y er et nummer
+			if(isNaN(x) || isNaN(y)){
+				// alert hvis der blev tastet forkert
+				alert("Det var ikke et nummer!");
+			}else{
+				// hvis vi fik 2 tal
+				// let indikerer en lokal variable, som kun er gyldig i dets umiddelbare kode sammenhæng. Her else statement. Derfor konflikter det ikke med den globale variable result ovenover
+				let result = x * y;
+				// funktionen giver resultatet af beregningen tilbage
+				return result;
+			}
+		}
+		
+		// += Addition assignmen: Tilføjer værdier til vores output element
+		output.innerHTML += ' Calculation result is: ';
+		output.innerHTML += multiply(); // kalder funktionen multiply() - siden funktionen har et return værdi, bliver den lagt ind i output elementet.
+			
+	</script>
+</body>
+</html>

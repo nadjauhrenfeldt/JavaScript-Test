@@ -17,9 +17,9 @@ var output = document.getElementById("demo3");
 var str1 = "Hello";
 var str2 = "World!";
 	
-var x = 5;
-var y = 10;
-
+var x = prompt("Indtast et nummer:", ""); 
+var y = prompt("Indtast et nummer:", "");
+	
 var result = str1 + " " + str2; // Concatenation
 //var result1 = x * y;
 	
@@ -27,9 +27,19 @@ var result = str1 + " " + str2; // Concatenation
 function multiply(){
 	// Do something...
 	// En lokal variabel
-	var result1 = x * y;
-	// Funktionen giver en værdi tilbage
+	// Let indikere en lokal variabel, som kun er gyldig i dens umiddelbare kode sammenhæng
+
+	if(isNaN(x) || isNaN(y)){
+	   // Do something if condition is true
+	   alert("Det var ikke et nummer!");
+	   }else{
+	   // Or do this
+		let result1 = x * y;
+		return result1;
+	   }
 	
+
+	// Funktionen giver en værdi tilbage
 	console.log(result1);
 	return result1;
 }
