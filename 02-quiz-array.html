@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Simple Quiz with JS array</title>
-<script type="text/javascript">
+<p>Rigtige svar:</p>
+<p id="svar"></p>	
+<script>
 	
 	// "2 dimensional" array
 	var questions = [							 
@@ -11,6 +13,31 @@
 		['How many moons does Saturn have?', 31],
 		['How many moons does Venus have?', 0]	
 	];
+	
+	//console.log(questions);
+	//console.log('First questions: ' + questions[0][0]);
+	//console.log('First answer: ' + questions[0][1]);
+	
+	
+	var correctAnswar = 0;
+	
+	function askQuestion(){
+		for (i = 0; i < questions.length; i ++){
+		var answer = prompt(questions[i][0], '');
+		
+		if (answer == questions[i][1]){
+			alert('Correct!');
+			correctAnswar++;
+			} else {
+			alert('Not correct! The correct answer was ' + questions[i][1]);	
+			}
+		}
+
+		document.getElementById('svar').innerHTML = correctAnswar;
+	}
+	
+	// for funktionen
+	askQuestion();
 	
 </script>
 </head>

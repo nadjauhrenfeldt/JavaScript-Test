@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mini Quiz in JavaScript</title>
+</head>
+
+<body>
+<h2>Mini Quiz with JavaScript!</h2>
+<p id="question"></p>
+
+<form id="myForm" method="post" onsubmit="return validateAnswer()">
+	<p><input type="radio" name="choice" value="donald trump">Donald Trump</p>
+	<p><input type="radio" name="choice" value="peter plys">Peter Plys</p>
+	<p><input type="radio" name="choice" value="tigerdyret">Tigerdyret</p>
+	<button type="submit" id="submit">Submit your answer!</button>
+</form>
+	
+<p id="feedback"></p>
+
+<script>
+	// 2 globale variabler (konstanter)
+	const question = 'Who is the 45th president of the United States of America?';
+	const solution = 'peter plys';
+	
+	var questionText = document.getElementById('question');
+	var myForm = document.getElementById('myForm');
+	var feedback = document.getElementById('feedback');
+	//console.log(questionText);
+	questionText.innerHTML = question;
+	
+	// Get the radio buttions!
+	var choices = document.getElementsByTagName('input');
+	//console.log(choices[0].value); // Choices is an array! 	
+	//console.log(choices[1].value);	
+	
+	function validateAnswer(){
+		
+		// for loop (especially for arrays ;-)
+		
+		for(var i = 0; i < choices.length; i++){
+			// Run as long as condition is true
+			//console.log(choices[i].value);
+			// Compare input value and right answer
+			if (choices[i].checked && choices[i].value == solution) {
+				feedback.innerHTML = 'That\'s correct!';
+				// Force stop loop
+				break;
+				} else {
+					feedback.innerHTML = 'You got it all wrong!';
+				}
+		}
+		
+		// Forhindre, at form bliver sendt
+		return false;
+	}
+	
+</script>
+</body>
+</html>
